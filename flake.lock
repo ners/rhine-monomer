@@ -1,0 +1,48 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1753429684,
+        "narHash": "sha256-9h7+4/53cSfQ/uA3pSvCaBepmZaz/dLlLVJnbQ+SJjk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "7fd36ee82c0275fb545775cc5e4d30542899511d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "rhine-sdl2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753538093,
+        "narHash": "sha256-MO4wLqqrdIoSDxX4ZmS0ZxJ7vSS0hofOREDRglCHdho=",
+        "owner": "ners",
+        "repo": "rhine-sdl2",
+        "rev": "8ce0391228df7a511d617fb0755d6f3b762baa25",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ners",
+        "repo": "rhine-sdl2",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "rhine-sdl2": "rhine-sdl2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

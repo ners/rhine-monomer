@@ -1,0 +1,86 @@
+cabal-version: 3.0
+name: rhine-monomer
+version: 0.4.0.0
+synopsis: Rhine frontend for Monomer
+homepage: https://github.com/ners/rhine-monomer/blob/master/README.md
+license: Apache-2.0
+license-file: LICENCE.md
+author: ners
+maintainer: ners@gmx.ch
+bug-reports: https://github.com/ners/rhine-monomer/issues
+category: System
+build-type: Simple
+extra-source-files:
+  CHANGELOG.md
+  README.md
+
+source-repository head
+  type: git
+  location: https://github.com/ners/rhine-monomer
+
+common common
+  default-language: GHC2021
+  ghc-options:
+    -Weverything
+    -Wno-unsafe
+    -Wno-missing-safe-haskell-mode
+    -Wno-missing-export-lists
+    -Wno-missing-import-lists
+    -Wno-missing-kind-signatures
+    -Wno-all-missed-specialisations
+
+  default-extensions:
+    ApplicativeDo
+    BlockArguments
+    DataKinds
+    DefaultSignatures
+    DeriveAnyClass
+    DeriveGeneric
+    DerivingStrategies
+    DerivingVia
+    ExplicitNamespaces
+    LambdaCase
+    NoImplicitPrelude
+    OverloadedLabels
+    OverloadedRecordDot
+    OverloadedStrings
+    RecordWildCards
+    RecursiveDo
+    TypeFamilies
+    ViewPatterns
+
+  build-depends:
+    base >=4.16 && <5,
+    lens,
+    rhine,
+    monomer,
+    text,
+    unliftio,
+
+library
+  import: common
+  hs-source-dirs: src
+  build-depends:
+    automaton,
+    lens,
+    monad-schedule,
+    rhine-sdl2,
+    sdl2,
+    time,
+    transformers,
+
+  exposed-modules:
+    FRP.Rhine.Monomer
+    FRP.Rhine.Monomer.Generic
+
+  other-modules:
+
+test-suite test
+  import: common
+  ghc-options: -threaded
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: Main.hs
+  build-depends:
+    rhine-monomer,
+    directory,
